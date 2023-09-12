@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sandwich Builder</title>
+    <link rel="stylesheet" href=" sandwichBuilder.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="center">
+        <h1>Build Your Own Sandwich!</h1>
+        <form action="sandwichBuilder.aspx" class="form" method="post">
+            <div class="inputInfo">
+                <input type="text" name="name" id="name" required /><span>Enter Name:</span>
+            </div>
+            <br />
+            <div class="inputInfo">
+                <input type="text" name="phone" id="phone" required /> <span> Enter Phone Number:</span>
+            </div>
+            <br />
+            <div class="inputOptions">
+                <label>
+                    Size:
+                    <select id="size" name="size">
+                        <option value="4 inches">4 inches</option>
+                        <option value="6 inches">6 inches</option>
+                        <option value="12 inches">12 inches</option>
+                    </select>
+                </label>
+            </div>
+            <br />
+            <div class="inputOptions">
+                <label>
+                    Customization for Bread:
+                    <br />
+                    <label>
+                        <input type="radio" name="toast" id="toasted" value="Toasted" />
+                        Toasted
+                    </label>
+                    <label>
+                        <input type="radio" name="toast" id="untoasted" value="Untoasted" />
+                        Untoasted
+                    </label>
+                </label>
+            </div>
+            <br />
+            <div class="inputOptions">
+                <label>
+                    Spread Options:
+                    <br />
+                    <label>
+                        <input type="checkbox" name="spread" id="Mayo" value="Mayo" />
+                        Mayo
+                    </label>
+                    <label>
+                        <input type="checkbox" name="spread" id="AvocadoRanch" value="AvocadoRanch" />
+                        Avocado Ranch
+                    </label>
+                    <label>
+                        <input type="checkbox" name="spread" id="Italian" value="Italian" />
+                        Italian Dressing
+                    </label>
+                    <label>
+                        <input type="checkbox" name="spread" id="Sweet" value="Sweet" />
+                        Sweet Onion
+                    </label>
+                    <label>
+                        <input type="checkbox" name="spread" id="Spicy" value="Spicy" />
+                        Spicy Chipotle
+                    </label>
+                </label>
+            </div>
+            <br />
+            <div class="inputOptions">
+                <label>
+                    Topping Options:
+                    <br />
+                    <label>
+                        <input type="checkbox" name="toppings" id="Tomato" value="Tomatoes" />
+                        Tomatoes
+                    </label>
+                    <label>
+                        <input type="checkbox" name="toppings" id="Onions" value="Onions" />
+                        Onions
+                    </label>
+                    <label>
+                        <input type="checkbox" name="toppings" id="Lettuce" value="Lettuce" />
+                        Lettuce
+                    </label>
+                    <label>
+                        <input type="checkbox" name="toppings" id="Spinach" value="Spinach" />
+                        Spinach
+                    </label>
+                    <label>
+                        <input type="checkbox" name="toppings" id="Jalapeno" value="Jalapeno" />
+                    </label>
+                    Jalapeño
+                </label>
+            </div>
+            <br />
+            <div class="inputOptions">
+                <label>
+                    Premium Topping Options:
+                    <br />
+                    <label>
+                        <input type="checkbox" name="ptoppings" id="Chicken" value="Chicken" />
+                        Chicken
+                    </label>
+                    <label>
+                        <input type="checkbox" name="ptoppings" id="Bacon" value="Bacon" />
+                        Bacon
+                    </label>
+                    <label>
+                        <input type="checkbox" name="ptoppings" id="Peperoni" value="Peperoni" />
+                        Peperoni
+                    </label>
+                    <label>
+                        <input type="checkbox" name="ptoppings" id="Extra Cheese" value="Extra Cheese" />
+                        Extra Cheese
+                    </label>
+                    <label>
+                        <input type="checkbox" name="ptoppings" id="Olives" value="Olives" />
+                    </label>
+                    Olives
+                </label>
+            </div>
+            <br />
+            <div class="inputOptions">
+                <label>
+                    Meal:
+                    <br />
+                    <label>
+                        <input type="radio" name="meal" id="mealY" value="Yes" onclick="displayDrinks(); displaySides()" />
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="meal" id="mealN" value="No" />
+                        No
+                    </label>
+                </label>
+                <br/>
+                <div style="display: none" id="drinksDiv">
+                    <label>
+                        Drink:
+                        <br />
+                        <label>
+                            <input type="radio" name="drinks" id="Coke" value="Coke" />
+                            Coke
+                        </label>
+                        <label>
+                            <input type="radio" name="drinks" id="Pepsi" value="Pepsi" />
+                            Pepsi
+                        </label>
+                        <label>
+                            <input type="radio" name="drinks" id="Mountain" value="Mountain Dew" />
+                            Mountain Dew
+                        </label>
+                    </label>
+                </div>
+                <br />
+                <div style="display: none" id="sidesDiv">
+                    <label>
+                        Sides:
+                        <br />
+                        <label>
+                            <input type="radio" name="sides" id="Cookies" value="Cookies" />
+                            Cookies
+                        </label>
+                        <label>
+                            <input type="radio" name="sides" id="Chips" value="Chips" />
+                            Chips
+                        </label>
+                        <label>
+                            <input type="radio" name="sides" id="Fruits" value="Fruits" />
+                            Fruits
+                        </label>
+                    </label>
+                </div>
+            </div>
+            <br />
+            <div class="inputOptions">
+                <label>
+                    Tip:
+                    <input type="number" inputmode="decimal" min="0" step=".01" id="tip" name="tip" />
+                </label>
+            </div>
+            <br />
+            <div class="inputButton">
+                <input type="reset" value="Clear" />
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    </div>
+    <script>
+        function displayDrinks() {
+            var x = document.getElementById("drinksDiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        function displaySides() {
+            var x = document.getElementById("sidesDiv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
